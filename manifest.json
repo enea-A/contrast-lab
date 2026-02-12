@@ -492,7 +492,7 @@
         "bg-solid"
       ],
       "snippet": "cases/c32_helper_text_low_contrast.html",
-      "notes": "Label \"Email\" plus helper text \"We’ll never share it.\" The helper line has low contrast. Tools may report one and miss the other.",
+      "notes": "Label \"Email\" plus helper text \"We\u2019ll never share it.\" The helper line has low contrast. Tools may report one and miss the other.",
       "tier": "core"
     },
     {
@@ -944,8 +944,7 @@
       "threshold": 4.5,
       "tags": [
         "bg-solid",
-        "inheritance",
-        "core-set"
+        "inheritance"
       ],
       "snippet": "cases/c61_f24_background_set_text_color_not_set.html",
       "notes": "WCAG Failure F24: background color is set but text color is not explicitly set. Contrast depends on inherited/UA defaults and is not guaranteed."
@@ -960,8 +959,7 @@
       "threshold": 4.5,
       "tags": [
         "bg-image",
-        "non-dom",
-        "challenge-set"
+        "non-dom"
       ],
       "snippet": "cases/c62_image_of_text_banner.html",
       "notes": "Text is part of an image (not real DOM text). DOM/CSS-based tools may miss it."
