@@ -962,7 +962,8 @@
         "non-dom"
       ],
       "snippet": "cases/c62_image_of_text_banner.html",
-      "notes": "Text is part of an image (not real DOM text). DOM/CSS-based tools may miss it."
+      "notes": "Text is part of an image (not real DOM text). DOM/CSS-based tools may miss it.",
+      "tier": "challenge"
     }
   ]
 }
