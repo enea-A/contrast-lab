@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <title>Contrast Lab — Playground</title>
+  <link rel="stylesheet" href="./assets/css/app.css"/>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="cvd-none"><feColorMatrix type="matrix"
+    values="1 0 0 0 0
+            0 1 0 0 0
+            0 0 1 0 0
+            0 0 0 1 0"/></filter>
+
+  <filter id="cvd-protanopia"><feColorMatrix type="matrix"
+    values="0.56667 0.43333 0 0 0
+            0.55833 0.44167 0 0 0
+            0 0.24167 0.75833 0 0
+            0 0 0 1 0"/></filter>
+  <filter id="cvd-deuteranopia"><feColorMatrix type="matrix"
+    values="0.625 0.375 0 0 0
+            0.70 0.30 0 0 0
+            0 0.30 0.70 0 0
+            0 0 0 1 0"/></filter>
+  <filter id="cvd-tritanopia"><feColorMatrix type="matrix"
+    values="0.95 0.05 0 0 0
+            0 0.43333 0.56667 0 0
+            0 0.475 0.525 0 0
+            0 0 0 1 0"/></filter>
+</svg>
+
+<div class="container sim-root" id="simRoot" data-sim="none">
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>Contrast Lab</h1>
+        <div class="sub">
+          <span id="caseCount">—</span> controlled contrast scenarios for tool validation and visual checks.
+        </div>
+      </div>
+    </div>
+
+    <div class="controls" id="controls">
+      <label for="q">Search</label>
+      <input class="input" id="q" placeholder="Search cases (id, tag, SC...)" size="26" />
+
+      <label for="tool">Tool</label>
+      <input class="input" id="tool" placeholder="Tool name" size="14" />
+
+      <label for="user">Human interpretation</label>
+      <input class="input" id="user" placeholder="Name / initials" size="16" />
+
+      <label for="tagFilter">Tag</label>
+      <select id="tagFilter" aria-label="Tag filter"></select>
+
+      <label for="tierFilter">Set</label>
+      <select id="tierFilter" aria-label="Tier filter">
+        <option value="">All sets</option>
+        <option value="core">Core set</option>
+        <option value="challenge">Challenge set</option>
+      </select>
+
+      <label for="sim">Vision</label>
+      <select id="sim">
+        <option value="none">normal</option>
+        <option value="blur">blur</option>
+        <option value="low-contrast">low-contrast display</option>
+        <option value="glare">glare</option>
+        <option value="protanopia">protanopia</option>
+        <option value="deuteranopia">deuteranopia</option>
+        <option value="tritanopia">tritanopia</option>
+      </select>
+
+      <label for="btnFreeze">Freeze motion</label>
+      <button class="btn dropdown" id="btnFreeze" type="button" title="Disables animations/transitions to keep rendering stable for tools and screenshots.">Off</button>
+
+      <label for="btnClean">Layout</label>
+      <button class="btn dropdown" id="btnClean" type="button">Compact</button>
+
+      <button class="btn primary" id="btnExport" type="button">Export CSV</button>
+      <button class="btn danger" id="btnReset" type="button">Reset marks</button>
+    </div>
+  </div>
+
+  <div class="smallprint">
+    Current tool: <span class="code" id="toolBadge">—</span> · Visible cases: <span class="code" id="count">0</span><br/>
+    Tip: for page‑by‑page extensions, use <span class="code">Open</span> on a single case.
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <p class="smallprint">
+    Vision modes help evaluate perceptual robustness. They do not change WCAG thresholds.
+  </p>
+</div>
+
+<script src="./assets/js/app.js"></script>
+</body>
+</html>
