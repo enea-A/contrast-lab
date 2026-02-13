@@ -1,0 +1,2866 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <title>Contrast Lab — Playground</title>
+  <link rel="stylesheet" href="./assets/css/app.css"/>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="cvd-none"><feColorMatrix type="matrix"
+    values="1 0 0 0 0
+            0 1 0 0 0
+            0 0 1 0 0
+            0 0 0 1 0"/></filter>
+
+  <filter id="cvd-protanopia"><feColorMatrix type="matrix"
+    values="0.56667 0.43333 0 0 0
+            0.55833 0.44167 0 0 0
+            0 0.24167 0.75833 0 0
+            0 0 0 1 0"/></filter>
+  <filter id="cvd-deuteranopia"><feColorMatrix type="matrix"
+    values="0.625 0.375 0 0 0
+            0.70 0.30 0 0 0
+            0 0.30 0.70 0 0
+            0 0 0 1 0"/></filter>
+  <filter id="cvd-tritanopia"><feColorMatrix type="matrix"
+    values="0.95 0.05 0 0 0
+            0 0.43333 0.56667 0 0
+            0 0.475 0.525 0 0
+            0 0 0 1 0"/></filter>
+</svg>
+
+<div class="container sim-root" id="simRoot" data-sim="none">
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>Contrast Lab</h1>
+        <div class="sub">
+          <span id="caseCount">62</span> controlled contrast scenarios for tool validation and visual checks.
+        </div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <a class="btn" href="index.html">Switch to interactive homepage</a>
+    </div>
+
+    <div class="controls" id="controls">
+      <label for="q">Search</label>
+      <input class="input" id="q" placeholder="Search cases (id, tag, SC...)" size="26" />
+
+      <label for="tool">Tool</label>
+      <input class="input" id="tool" placeholder="Tool name" size="14" />
+
+      <label for="user">Human interpretation</label>
+      <input class="input" id="user" placeholder="Name / initials" size="16" />
+
+      <label for="tagFilter">Tag</label>
+      <select id="tagFilter" aria-label="Tag filter"></select>
+
+      <label for="tierFilter">Set</label>
+      <select id="tierFilter" aria-label="Tier filter">
+        <option value="">All sets</option>
+        <option value="core">Core set</option>
+        <option value="challenge">Challenge set</option>
+      </select>
+
+      <div style="display:flex; align-items:center; gap:8px;">
+        <label for="sim">Vision</label>
+        <select id="sim">
+          <option value="none">normal</option>
+          <option value="blur">blur</option>
+          <option value="low-contrast">low-contrast display</option>
+          <option value="glare">glare</option>
+          <option value="protanopia">protanopia</option>
+          <option value="deuteranopia">deuteranopia</option>
+          <option value="tritanopia">tritanopia</option>
+        </select>
+      </div>
+
+      <label for="btnFreeze">Freeze motion</label>
+      <button class="btn dropdown" id="btnFreeze" type="button" title="Disables animations/transitions to keep rendering stable for tools and screenshots.">Off</button>
+
+      <label for="btnClean">Layout</label>
+      <button class="btn dropdown" id="btnClean" type="button">Compact</button>
+
+      <button class="btn primary" id="btnExport" type="button">Export CSV</button>
+      <button class="btn danger" id="btnReset" type="button">Reset marks</button>
+    </div>
+  </div>
+
+  <div class="smallprint">
+    Current tool: <span class="code" id="toolBadge">—</span> · Visible cases: <span class="code" id="count">62</span><br/>
+    Tip: for page‑by‑page extensions, use <span class="code">Open</span> on a single case.
+  </div>
+
+  <div class="grid" id="grid">
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Uniform background color</p>
+      <div class="meta">
+        <span class="badge">c01</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c01" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><section class="case sim-cvd" data-case-id="c01" >
+  <div class="viewport" style="background:#ffffff;">
+    <span class="targetText" data-target="text" style="position:relative;color:#111827;">Baseline</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Baseline&quot; on white background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Uniform background color - light gray text</p>
+      <div class="meta">
+        <span class="badge">c02</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c02" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><section class="case sim-cvd" data-case-id="c02" >
+  <div class="viewport" style="background:#ffffff;">
+    <span class="targetText" data-target="text" style="position:relative;color:#9ca3af;">Low contrast</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Low contrast&quot; on white background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Uniform dark background color (viewport background)</p>
+      <div class="meta">
+        <span class="badge">c03</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c03" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><section class="case sim-cvd" data-case-id="c03" >
+  <div class="viewport" style="background:#111827;">
+    <span class="targetText" data-target="text" style="position:relative;color:#ffffff;">Baseline</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Baseline&quot; on dark background; the background is set on the viewport element.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Uniform dark background color</p>
+      <div class="meta">
+        <span class="badge">c04</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c04" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><section class="case sim-cvd" data-case-id="c04" >
+  <div class="viewport">
+    <div style="position:absolute;inset:0;background:#111827;"></div><span class="targetText" data-target="text" style="position:relative;color:#ffffff;">Baseline</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Baseline&quot; on dark background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Alpha text - 50%</p>
+      <div class="meta">
+        <span class="badge">c05</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c05" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><section class="case sim-cvd" data-case-id="c05" >
+  <div class="viewport" style="background:#111827;">
+    <span class="targetText" data-target="text" style="position:relative;color:rgba(255,255,255,.50);">Alpha 50%</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Alpha 50%&quot; uses opacity on dark background. The rendered text color depends on alpha blending.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid, alpha</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Alpha text - 25%</p>
+      <div class="meta">
+        <span class="badge">c06</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c06" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><section class="case sim-cvd" data-case-id="c06" >
+  <div class="viewport" style="background:#111827;">
+    <span class="targetText" data-target="text" style="position:relative;color:rgba(255,255,255,.25);">Alpha 25%</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Alpha 25%&quot; uses opacity on dark background. The rendered text color depends on alpha blending.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid, alpha</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Near threshold (4.5:1)</p>
+      <div class="meta">
+        <span class="badge">c07</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c07" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><section class="case sim-cvd" data-case-id="c07" >
+  <div class="viewport" style="background:#ffffff;">
+    <span class="targetText" data-target="text" style="position:relative;color:#787677;font-size:18px;font-weight:700;">Normal text</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text on white background with contrast just above AA (4.51:1, rounded). Near the threshold, results may differ slightly due to rounding/precision choices.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Below threshold (4.5:1)</p>
+      <div class="meta">
+        <span class="badge">c08</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c08" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><section class="case sim-cvd" data-case-id="c08" >
+  <div class="viewport" style="background:#ffffff;">
+    <span class="targetText" data-target="text" style="position:relative;color:#737876;font-size:18px;font-weight:700;">Normal text</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text on white background with contrast just below AA (4.49:1, rounded). Near the threshold, results may differ slightly due to rounding/precision choices.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Large text - near threshold (3:1)</p>
+      <div class="meta">
+        <span class="badge">c09</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c09" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><section class="case sim-cvd" data-case-id="c09" >
+  <div class="viewport" style="background:#ffffff;">
+    <span class="targetText" data-target="text" style="position:relative;color:#8F94A9;font-size:18.66px;font-weight:700;">Large text</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Large text on white background with contrast just above 3:1 (3.01:1, rounded). Near the threshold, results may differ slightly due to rounding/precision choices.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Large text - below threshold (3:1)</p>
+      <div class="meta">
+        <span class="badge">c10</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c10" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><section class="case sim-cvd" data-case-id="c10" >
+  <div class="viewport" style="background:#ffffff;">
+    <span class="targetText" data-target="text" style="position:relative;color:#969594;font-size:18.66px;font-weight:700;">Large text</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Large text on white background with contrast just below 3:1 (2.99:1, rounded). Near the threshold, results may differ slightly due to rounding/precision choices.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Normal text</p>
+      <div class="meta">
+        <span class="badge">c11</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c11" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c11"] .viewport{ background:#ffffff; justify-content:center; }
+</style>
+<section class="case sim-cvd" data-case-id="c11" >
+  <div class="viewport">
+    <span class="targetText" data-target="text" style="color:#111827;font-size:16px;font-weight:400;">Normal text</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Normal text&quot; on white background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Normal text - low contrast</p>
+      <div class="meta">
+        <span class="badge">c12</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c12" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c12"] .viewport{ background:#ffffff; justify-content:center; }
+</style>
+<section class="case sim-cvd" data-case-id="c12" >
+  <div class="viewport">
+    <span class="targetText" data-target="text" style="color:#9ca3af;font-size:16px;font-weight:400;">Normal text</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Normal text&quot; on white background with low contrast.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Declared background - white</p>
+      <div class="meta">
+        <span class="badge">c13</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c13" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c13"] .viewport{ background:#ffffff; justify-content:center; }
+</style>
+<section class="case sim-cvd" data-case-id="c13" >
+  <div class="viewport">
+    <span class="targetText" data-target="text" style="color:#111827;font-weight:700;">Declared</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Declared&quot; on declared white background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Declared background white - covered by image</p>
+      <div class="meta">
+        <span class="badge">c14</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c14" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c14"] .viewport{ background:#ffffff; justify-content:center; position:relative; }
+.case[data-case-id="c14"] .viewport::before{ content:""; position:absolute; inset:0; background:url("assets/my_hero.jpg") center/cover no-repeat; }
+.case[data-case-id="c14"] .targetText{ position:relative; color:#111827; font-weight:700; }
+</style>
+<section class="case sim-cvd" data-case-id="c14" >
+  <div class="viewport">
+    <span class="targetText" data-target="text">Covered</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Covered&quot; over a background image; the viewport also declares white underneath. Some checkers may use the declared background instead of the image.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-image, alpha</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Declared background black - covered by image</p>
+      <div class="meta">
+        <span class="badge">c15</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c15" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c15"] .viewport{ background:#000000; justify-content:center; position:relative; }
+.case[data-case-id="c15"] .viewport::before{ content:""; position:absolute; inset:0; background:url("assets/my_hero.jpg") center/cover no-repeat; }
+.case[data-case-id="c15"] .targetText{ position:relative; color:#111827; font-weight:700; }
+</style>
+<section class="case sim-cvd" data-case-id="c15" >
+  <div class="viewport">
+    <span class="targetText" data-target="text">Covered</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Covered&quot; over a background image; the viewport also declares black underneath. Some checkers may use the declared background instead of the image.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-image, alpha</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Declared background - gradient overlay</p>
+      <div class="meta">
+        <span class="badge">c16</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c16" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c16"] .viewport{ background:#000000; justify-content:center; position:relative; }
+.case[data-case-id="c16"] .viewport::before{ content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(255,255,255,.85), rgba(255,255,255,.35)), url("assets/my_hero.jpg") center/cover no-repeat; }
+.case[data-case-id="c16"] .targetText{ position:relative; color:#111827; font-weight:700; }
+</style>
+<section class="case sim-cvd" data-case-id="c16" >
+  <div class="viewport">
+    <span class="targetText" data-target="text">Covered</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Covered&quot; over a background image with a translucent gradient overlay; black is declared underneath. Correct evaluation requires compositing multiple layers.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-gradient, alpha</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Declared background black - covered by image (light blue text)</p>
+      <div class="meta">
+        <span class="badge">c17</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c17" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c17"] .viewport{ background:#000000; justify-content:center; position:relative; }
+.case[data-case-id="c17"] .viewport::before{ content:""; position:absolute; inset:0; background:url("assets/my_hero.jpg") center/cover no-repeat; }
+.case[data-case-id="c17"] .targetText{ position:relative; color:#7dd3fc; font-weight:700; }
+</style>
+<section class="case sim-cvd" data-case-id="c17" >
+  <div class="viewport">
+    <span class="targetText" data-target="text">Covered</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Light-blue text &quot;Covered&quot; over a background image; black is declared underneath. Some checkers may use the declared background instead of the image.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-image, alpha</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Declared background white - covered by image (light blue text)</p>
+      <div class="meta">
+        <span class="badge">c18</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c18" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c18"] .viewport{ background:#ffffff; justify-content:center; position:relative; }
+.case[data-case-id="c18"] .viewport::before{ content:""; position:absolute; inset:0; background:url("assets/my_hero.jpg") center/cover no-repeat; }
+.case[data-case-id="c18"] .targetText{ position:relative; color:#7dd3fc; font-weight:700; }
+</style>
+<section class="case sim-cvd" data-case-id="c18" >
+  <div class="viewport">
+    <span class="targetText" data-target="text">Covered</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Light-blue text &quot;Covered&quot; over a background image; white is declared underneath. Some checkers may use the declared background instead of the image.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-image, alpha</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Tiny text</p>
+      <div class="meta">
+        <span class="badge">c19</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c19" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c19"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c19"] .btnx{
+  border-radius: 14px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #9ca3af;
+  font-size: 11px;
+  font-weight: 700;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c19" >
+  <div class="viewport">
+
+    <button type="button" class="btnx" aria-label="Button">Tiny text</button>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Button label &quot;Tiny text&quot; (11px) on a white button over white background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Thin weight</p>
+      <div class="meta">
+        <span class="badge">c20</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c20" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c20"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c20"] .btnx{
+  border-radius: 14px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 300;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c20" >
+  <div class="viewport">
+
+    <button type="button" class="btnx" aria-label="Button">Thin weight</button>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Button label &quot;Thin weight&quot; on a white button over white background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Parent opacity</p>
+      <div class="meta">
+        <span class="badge">c21</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c21" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c21"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c21"] .wrap{ opacity:0.45; }
+.case[data-case-id="c21"] .wrap .targetText{ color:#111827; }
+</style>
+<section class="case sim-cvd" data-case-id="c21" >
+  <div class="viewport">
+
+    <div class="wrap"><span class="targetText" data-target="text">Opacity</span></div>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Opacity&quot; inside a parent element with reduced opacity on white background. Parent opacity changes the rendered foreground color.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid, alpha</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">RGBA text - 40%</p>
+      <div class="meta">
+        <span class="badge">c22</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c22" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c22"] .viewport{ background:#ffffff; justify-content:center; }
+</style>
+<section class="case sim-cvd" data-case-id="c22" >
+  <div class="viewport">
+
+    <span class="targetText" data-target="text" style="color: rgba(220,38,38,0.40);">RGBA</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;RGBA&quot; uses transparency on white background. The rendered text color depends on alpha blending.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid, alpha</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Text shadow</p>
+      <div class="meta">
+        <span class="badge">c23</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c23" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><section class="case sim-cvd" data-case-id="c23" >
+  <div class="viewport">
+
+    <div style="position:absolute;inset:0;background:#ffffff;"></div><span class="targetText" data-target="text" style="position:relative;color:#a3a3a3;text-shadow:0 2px 6px rgba(0,0,0,.35);">Shadow</span>
+  </div>
+</section></div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Shadow&quot; on white background with a text shadow. Some checkers ignore shadows and evaluate only the text color.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Text shadow (strong)</p>
+      <div class="meta">
+        <span class="badge">c24</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c24" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c24"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c24"] .targetText{ color:#111827; text-shadow:0 3px 10px rgba(17,24,39,.75); }
+</style>
+<section class="case sim-cvd" data-case-id="c24" >
+  <div class="viewport">
+    <span class="targetText" data-target="text">Shadow</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Shadow&quot; on white background with a strong blurred shadow. Some checkers ignore shadows and evaluate only the text color.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Placeholder - low contrast</p>
+      <div class="meta">
+        <span class="badge">c25</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c25" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c25"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c25"] .box{ width: 270px; }
+.case[data-case-id="c25"] input{
+  width:100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 14px;
+}
+.case[data-case-id="c25"] input::placeholder{ color: #cbd5e1; }
+</style>
+<section class="case sim-cvd" data-case-id="c25" >
+  <div class="viewport">
+
+    <div class="box"><label class="sr-only" for="c20_i">Search</label><input id="c20_i" aria-label="Search" placeholder="Type here…" /></div>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Placeholder &quot;Type here...&quot; in a text input on white background with low contrast.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Placeholder - high contrast</p>
+      <div class="meta">
+        <span class="badge">c26</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c26" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c26"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c26"] .box{ width: 270px; }
+.case[data-case-id="c26"] input{
+  width:100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 14px;
+}
+.case[data-case-id="c26"] input::placeholder{ color: #6b7280; }
+</style>
+<section class="case sim-cvd" data-case-id="c26" >
+  <div class="viewport">
+
+    <div class="box"><label class="sr-only" for="c21_i">Search</label><input id="c21_i" aria-label="Search" placeholder="Type here…" /></div>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Placeholder &quot;Type here...&quot; in a text input on white background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Floating label</p>
+      <div class="meta">
+        <span class="badge">c27</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c27" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c27"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c27"] .field{ position:relative; width:220px; height:54px; border:1px solid #d1d5db; border-radius:10px; background:#ffffff; }
+.case[data-case-id="c27"] .label{ position:absolute; left:12px; top:-9px; background:#ffffff; padding:0 6px; font-size:12px; color:#111827; font-weight:600; }
+.case[data-case-id="c27"] .value{ position:absolute; left:12px; top:20px; font-size:14px; color:#6b7280; }
+</style>
+<section class="case sim-cvd" data-case-id="c27" >
+  <div class="viewport">
+    <div class="field">
+      <span class="label" data-target="text">Email</span>
+      <span class="value">name@example.com</span>
+    </div>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Floating label &quot;Email&quot; above a text input on white background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Floating label - value low contrast</p>
+      <div class="meta">
+        <span class="badge">c28</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c28" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c28"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c28"] .field{ position:relative; width:220px; height:54px; border:1px solid #e5e7eb; border-radius:10px; background:#f9fafb; }
+.case[data-case-id="c28"] .label{ position:absolute; left:12px; top:-9px; background:#f9fafb; padding:0 6px; font-size:12px; color:#111827; font-weight:600; }
+.case[data-case-id="c28"] .value{ position:absolute; left:12px; top:20px; font-size:14px; color:#cbd5e1; }
+</style>
+<section class="case sim-cvd" data-case-id="c28" >
+  <div class="viewport">
+    <div class="field">
+      <span class="label" data-target="text">Email</span>
+      <span class="value">name@example.com</span>
+    </div>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Floating label is readable, but the input value has low contrast on the input background. Tools may report one and miss the other.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Floating label - low label contrast</p>
+      <div class="meta">
+        <span class="badge">c29</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c29" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c29"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c29"] .field{ position:relative; width:220px; height:54px; border:1px solid #e5e7eb; border-radius:10px; background:#ffffff; }
+.case[data-case-id="c29"] .label{ position:absolute; left:12px; top:-9px; background:#ffffff; padding:0 6px; font-size:12px; color:#cbd5e1; font-weight:600; }
+.case[data-case-id="c29"] .value{ position:absolute; left:12px; top:20px; font-size:14px; color:#111827; }
+</style>
+<section class="case sim-cvd" data-case-id="c29" >
+  <div class="viewport">
+    <div class="field">
+      <span class="label" data-target="text">Email</span>
+      <span class="value">name@example.com</span>
+    </div>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Floating label has low contrast on white background, while the input value is readable. Tools may report one and miss the other.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Floating label - highlighted value low contrast</p>
+      <div class="meta">
+        <span class="badge">c30</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c30" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c30"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c30"] .field{ position:relative; width:220px; height:54px; border:1px solid #d1d5db; border-radius:10px; background:#ffffff; }
+.case[data-case-id="c30"] .label{ position:absolute; left:12px; top:-9px; background:transparent; padding:0 6px; font-size:12px; color:#0b132b; font-weight:600; }
+.case[data-case-id="c30"] .value{ position:absolute; left:12px; top:20px; display:inline-block; background:#1e3a8a; padding:0 4px; line-height:18px; border-radius:3px; font-size:14px; color:#111827; }
+</style>
+<section class="case sim-cvd" data-case-id="c30" >
+  <div class="viewport">
+    <div class="field">
+      <span class="label" data-target="text">Email</span>
+      <span class="value">name@example.com</span>
+    </div>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Floating label (&quot;Email&quot;) is shown with sufficient contrast, but the input value (&quot;name@example.com&quot;) is rendered as dark text on a dark blue highlight, resulting in low contrast.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Disabled text - low contrast</p>
+      <div class="meta">
+        <span class="badge">c31</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c31" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c31"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c31"] .chipx{
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  width: 300px;
+  border-radius: 14px;
+  padding: 12px 14px;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size: 14px;
+  color:#9ca3af;
+}
+.case[data-case-id="c31"] .pill{
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  border:1px solid #e5e7eb;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c31" >
+  <div class="viewport">
+
+    <div class="chipx" aria-label="Setting row"><span>Disabled label</span><span class="pill">OFF</span></div>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Disabled setting row shows &quot;Disabled label&quot; and &quot;OFF&quot; with low contrast on the component background. Exempt only if the component is truly inactive/disabled; if the text is informative, it should be evaluated normally.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Helper text - low contrast</p>
+      <div class="meta">
+        <span class="badge">c32</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c32" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c32"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c32"] .chipx{
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  width: 300px;
+  border-radius: 14px;
+  padding: 12px 14px;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size: 14px;
+  color:#9ca3af;
+}
+.case[data-case-id="c32"] .pill{
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  border:1px solid #e5e7eb;
+}
+
+.case[data-case-id="c32"] .chipx{ flex-direction:column; align-items:flex-start; gap:6px; }
+.case[data-case-id="c32"] .chipx span:first-child{ color:#111827; font-weight:700; }
+.case[data-case-id="c32"] .chipx span:nth-child(2){ font-size: 12px; }
+</style>
+<section class="case sim-cvd" data-case-id="c32" >
+  <div class="viewport">
+
+    <div class="chipx"><span>Email</span><span>We’ll never share it.</span></div>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Label &quot;Email&quot; plus helper text &quot;We’ll never share it.&quot; The helper line has low contrast. Tools may report one and miss the other.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Link - high contrast</p>
+      <div class="meta">
+        <span class="badge">c33</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c33" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c33"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c33"] a{
+  font-size: 16px;
+  text-decoration: underline;
+  color: #1d4ed8;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c33" >
+  <div class="viewport">
+
+    <a href="#" aria-label="Link example">Link</a>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Link text &quot;Link&quot; on white background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Link - low contrast</p>
+      <div class="meta">
+        <span class="badge">c34</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c34" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c34"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c34"] a{
+  font-size: 16px;
+  text-decoration: underline;
+  color: #93c5fd;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c34" >
+  <div class="viewport">
+
+    <a href="#" aria-label="Link example">Link</a>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Link text &quot;Link&quot; on white background with low contrast.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Button - high contrast</p>
+      <div class="meta">
+        <span class="badge">c35</span>
+        <span class="badge">1.4.3,1.4.11</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c35" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c35"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c35"] .btnx{
+  border-radius: 14px;
+  padding: 12px 16px;
+  background: #1d4ed8;
+  border: 1px solid #1d4ed8;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c35" >
+  <div class="viewport">
+
+    <button type="button" class="btnx" aria-label="Button">Button</button>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Button label &quot;Button&quot; on a blue button over white background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Button - low contrast</p>
+      <div class="meta">
+        <span class="badge">c36</span>
+        <span class="badge">1.4.3,1.4.11</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c36" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c36"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c36"] .btnx{
+  border-radius: 14px;
+  padding: 12px 16px;
+  background: #1d4ed8;
+  border: 1px solid #1d4ed8;
+  color: #93c5fd;
+  font-size: 16px;
+  font-weight: 700;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c36" >
+  <div class="viewport">
+
+    <button type="button" class="btnx" aria-label="Button">Button</button>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Button label &quot;Button&quot; on a blue button with low contrast.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Badge - low contrast</p>
+      <div class="meta">
+        <span class="badge">c37</span>
+        <span class="badge">1.4.3,1.4.11</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c37" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c37"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c37"] .btnx{
+  border-radius: 14px;
+  padding: 12px 16px;
+  background: #fbbf24;
+  border: 1px solid #fbbf24;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c37" >
+  <div class="viewport">
+
+    <button type="button" class="btnx" aria-label="Button">Badge</button>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Badge label &quot;Badge&quot; on yellow background with low contrast.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Badge - high contrast</p>
+      <div class="meta">
+        <span class="badge">c38</span>
+        <span class="badge">1.4.3,1.4.11</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c38" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c38"] .viewport{ background:#ffffff; justify-content:center; }
+.case[data-case-id="c38"] .btnx{
+  border-radius: 14px;
+  padding: 12px 16px;
+  background: #fbbf24;
+  border: 1px solid #fbbf24;
+  color: #111827;
+  font-size: 16px;
+  font-weight: 700;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c38" >
+  <div class="viewport">
+
+    <button type="button" class="btnx" aria-label="Button">Badge</button>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Badge label &quot;Badge&quot; on yellow background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Gradient - low contrast</p>
+      <div class="meta">
+        <span class="badge">c39</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c39" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c39"] .viewport{ background: linear-gradient(90deg,#ffffff 0%,#f3f4f6 45%,#dbeafe 100%); }
+</style>
+<section class="case sim-cvd" data-case-id="c39" >
+  <div class="viewport">
+
+    <span class="targetText" data-target="text" style="color:#9ca3af;">Gradient</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Light gray text (&quot;Gradient&quot;) is shown directly on a non-uniform background with a left-to-right light gradient (no images, no transparency).</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-gradient</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Gradient text - background-clip</p>
+      <div class="meta">
+        <span class="badge">c40</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c40" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c40"] .viewport{ background:#ffffff; }
+.case[data-case-id="c40"] .gtext{
+  font-size: 28px;
+  font-weight: 900;
+  background: linear-gradient(90deg,#93c5fd,#fca5a5);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color: transparent;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c40" >
+  <div class="viewport">
+
+    <span class="gtext" data-target="text">Gradient</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Gradient&quot; rendered via background-clip:text with color: transparent on white background, so the text fill comes from a linear gradient. Some checkers may not compute the rendered fill correctly.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-gradient, blend-mask</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Radial - low contrast</p>
+      <div class="meta">
+        <span class="badge">c41</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c41" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c41"] .viewport{ background: radial-gradient(circle at 35% 35%, #ffffff 0 50%, #eff6ff 50% 100%); display:flex; align-items:center; justify-content:center; }
+.case[data-case-id="c41"] .targetText{ color:#9ca3af; }
+</style>
+<section class="case sim-cvd" data-case-id="c41">
+  <div class="viewport">
+    <span class="targetText" data-target="text">Radial</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Radial&quot; on a radial gradient background. Contrast varies across the text area.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-gradient</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Multi-stop - low contrast</p>
+      <div class="meta">
+        <span class="badge">c42</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c42" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c42"] .viewport{ background: linear-gradient(135deg,#ffffff 0%,#fef9c3 35%,#dbeafe 70%,#ffffff 100%); display:flex; align-items:center; justify-content:center; }
+.case[data-case-id="c42"] .targetText{ color:#9ca3af; }
+</style>
+<section class="case sim-cvd" data-case-id="c42">
+  <div class="viewport">
+    <span class="targetText" data-target="text">Multi-stop</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Multi-stop&quot; on a multi-stop gradient background. Contrast varies across the text area.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-gradient</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Repeating - low contrast</p>
+      <div class="meta">
+        <span class="badge">c43</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c43" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c43"] .viewport{ background: repeating-linear-gradient(45deg,#ffffff 0 10px,#f3f4f6 10px 20px); display:flex; align-items:center; justify-content:center; }
+.case[data-case-id="c43"] .targetText{ color:#9ca3af; }
+</style>
+<section class="case sim-cvd" data-case-id="c43">
+  <div class="viewport">
+    <span class="targetText" data-target="text">Repeating</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Repeating&quot; on a repeating pattern background. Sampling a single point can be misleading.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-gradient</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Checker - low contrast</p>
+      <div class="meta">
+        <span class="badge">c44</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c44" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c44"] .viewport{ background: linear-gradient(45deg,#ffffff 25%, #e5e7eb 25%, #e5e7eb 50%, #ffffff 50%, #ffffff 75%, #e5e7eb 75%, #e5e7eb 100%); background-size: 24px 24px; display:flex; align-items:center; justify-content:center; }
+.case[data-case-id="c44"] .targetText{ color:#9ca3af; }
+</style>
+<section class="case sim-cvd" data-case-id="c44">
+  <div class="viewport">
+    <span class="targetText" data-target="text">Checker</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Checker&quot; on a checkerboard pattern background. Sampling a single point can be misleading.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-pattern</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Gradient - text on pill</p>
+      <div class="meta">
+        <span class="badge">c45</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c45" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c45"] .viewport{ background: linear-gradient(90deg,#ffffff 0%,#f3f4f6 45%,#dbeafe 100%); }
+.case[data-case-id="c45"] .pill{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(0,0,0,.10);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 800;
+  color:#111827;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c45" >
+  <div class="viewport">
+
+    <span class="pill" data-target="text">Pill</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Pill&quot; inside a pill element on top of a gradient background. Tools may sample the wrong layer.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-gradient</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Pseudo background - ::before</p>
+      <div class="meta">
+        <span class="badge">c46</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c46" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c46"] .viewport{ background:#ffffff; }
+.case[data-case-id="c46"] .viewport::before{
+  content:"";
+  position:absolute; inset:0;
+  background: radial-gradient(circle at 50% 50%, #ffffff 0 48%, #eff6ff 48% 100%);
+}
+.case[data-case-id="c46"] .t{ position:relative; color:#9ca3af; font-size:18px; font-weight:800; }
+</style>
+<section class="case sim-cvd" data-case-id="c46" >
+  <div class="viewport">
+
+    <span class="t" data-target="text">::before</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;::before&quot; over a background drawn by a ::before pseudo-element. Tools that ignore pseudo-elements may compute the wrong background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-layered, pseudo</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Overlay panel - low contrast</p>
+      <div class="meta">
+        <span class="badge">c47</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c47" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c47"] .viewport{ background:#111827; }
+.case[data-case-id="c47"] .panel{
+  position:absolute; inset: 22px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.32);
+  border: 1px solid rgba(255,255,255,.22);
+}
+.case[data-case-id="c47"] .t{
+  position:relative;
+  color: #111827;
+  font-size: 18px;
+  font-weight: 750;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c47" >
+  <div class="viewport">
+
+    <div class="panel" aria-hidden="true"></div><span class="t" data-target="text">Overlay</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Dark text &quot;Overlay&quot; on a light translucent panel over a darker background. Correct evaluation requires alpha compositing.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-layered, alpha</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Overlay panel - high contrast</p>
+      <div class="meta">
+        <span class="badge">c48</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c48" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c48"] .viewport{ background:#111827; }
+.case[data-case-id="c48"] .panel{
+  position:absolute; inset: 22px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,.22);
+}
+.case[data-case-id="c48"] .t{
+  position:relative;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 750;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c48" >
+  <div class="viewport">
+
+    <div class="panel" aria-hidden="true"></div><span class="t" data-target="text">Overlay</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">White text &quot;Overlay&quot; on a light translucent panel over a darker background. Correct evaluation requires alpha compositing.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-layered, alpha</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Filter - brightness trap</p>
+      <div class="meta">
+        <span class="badge">c49</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c49" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c49"] .viewport{ background:#ffffff; }
+.case[data-case-id="c49"] .panel{
+  width: 100%; height: 100%;
+  display:flex; align-items:center; justify-content:center;
+  background:#111827;
+  filter: brightness(1.6);
+}
+.case[data-case-id="c49"] .targetText{
+  color:#1e3a8a;
+  font-weight:800;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c49" >
+  <div class="viewport">
+    <div class="panel"><span class="targetText" data-target="text">Filter</span></div>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text is shown on a panel whose background is altered by a CSS brightness filter, while the text color stays the same. Some checkers may ignore CSS filters and compute contrast from the original colors.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid, filter</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Backdrop-filter - blur and brightness</p>
+      <div class="meta">
+        <span class="badge">c50</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c50" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c50"] .viewport{
+  background: linear-gradient(120deg, #0f172a, #111827);
+  position: relative;
+}
+.case[data-case-id="c50"] .glass{
+  position:absolute; inset:18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px) brightness(1.2);
+}
+.case[data-case-id="c50"] .targetText{
+  position:relative;
+  color:#7365A5;
+  font-weight:800;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c50" >
+  <div class="viewport">
+    <div class="glass" aria-hidden="true"></div>
+    <span class="targetText" data-target="text">Backdrop</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text is shown on a translucent panel with backdrop-filter over a dark gradient. Some checkers may not compute the filtered/composited background correctly.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-layered, filter</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Mask-image - text</p>
+      <div class="meta">
+        <span class="badge">c51</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c51" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c51"] .viewport{ background:#ffffff; display:flex; align-items:center; justify-content:center; }
+.case[data-case-id="c51"] .maskText{
+  font-size: 32px;
+  font-weight: 800;
+  color: #111827;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 40%, #000 60%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 40%, #000 60%, transparent 100%);
+}
+</style>
+<section class="case sim-cvd" data-case-id="c51" >
+  <div class="viewport">
+    <span class="maskText" data-target="text">Masked</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">A CSS mask fades parts of the glyphs to transparent. Reported results depend on mask support and sampling.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-image, blend-mask</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Color-mix - low contrast</p>
+      <div class="meta">
+        <span class="badge">c52</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c52" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c52"] .viewport{ background:#ffffff; display:flex; align-items:center; justify-content:center; }
+.case[data-case-id="c52"] .targetText{
+  color: color-mix(in srgb, #111827 35%, transparent);
+  font-weight:800;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c52" >
+  <div class="viewport">
+    <span class="targetText" data-target="text">Color-mix</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text color is computed with color-mix using transparency on white background. Some checkers may not support color-mix and may compute a different final color.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid, computed</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Image background - nested element</p>
+      <div class="meta">
+        <span class="badge">c53</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c53" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c53"] .viewport{ background:#ffffff; }
+.case[data-case-id="c53"] .box{
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: linear-gradient(120deg, #111827, #0f172a);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.case[data-case-id="c53"] .t{
+  color:#1e40af;
+  font-weight:900;
+  font-size:18px;
+  text-shadow:0 2px 10px rgba(0,0,0,.25);
+}
+</style>
+<section class="case sim-cvd" data-case-id="c53" >
+  <div class="viewport">
+
+    <div class="box"><span class="t" data-target="text">Nested</span></div>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">The viewport background is white, but the text sits inside a nested element with its own dark gradient background. Some checkers may sample the viewport background instead of the nested background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-image</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Animated gradient background</p>
+      <div class="meta">
+        <span class="badge">c54</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c54" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c54"] .viewport{
+  background: linear-gradient(90deg, #facc15 0%, #facc15 35%, #111827 100%);
+  background-size: 200% 200%;
+  animation: c67shift 6s linear infinite;
+}
+@keyframes c67shift{
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+</style>
+<section class="case sim-cvd" data-case-id="c54" >
+  <div class="viewport">
+
+    <span class="targetText" data-target="text" style="color:#111827;font-weight:700;">Motion</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text is shown on an animated gradient background. Some checkers may sample a single animation frame and report different results.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-gradient, time</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">SVG text element</p>
+      <div class="meta">
+        <span class="badge">c55</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c55" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c55"] .viewport{ padding:0; background:#ffffff; }
+.case[data-case-id="c55"] svg{ width:100%; height:170px; display:block; }
+</style>
+<section class="case sim-cvd" data-case-id="c55" >
+  <div class="viewport">
+
+    
+<svg viewBox="0 0 900 340" role="img" aria-label="Canvas">
+  <rect x="0" y="0" width="900" height="340" fill="#ffffff"></rect>
+  <text x="450" y="170" text-anchor="middle" dominant-baseline="middle"
+        font-family="Arial, sans-serif" font-size="84" font-weight="800"
+        fill="#111111">SVG</text>
+</svg>
+
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text is rendered as SVG text rather than HTML text. Some checkers may handle SVG text differently or skip it.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid, non-dom</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">SVG text element - case 2</p>
+      <div class="meta">
+        <span class="badge">c56</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c56" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c56"] .viewport{ padding:0; background:#0b1220; }
+.case[data-case-id="c56"] svg{ width:100%; height:170px; display:block; }
+</style>
+<section class="case sim-cvd" data-case-id="c56" >
+  <div class="viewport">
+
+    
+<svg viewBox="0 0 900 340" role="img" aria-label="Canvas">
+  <rect x="0" y="0" width="900" height="340" fill="#0b1220"></rect>
+  <text x="450" y="170" text-anchor="middle" dominant-baseline="middle"
+        font-family="Arial, sans-serif" font-size="84" font-weight="800"
+        fill="#1e40af">SVG</text>
+</svg>
+
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text is rendered as SVG text rather than HTML text. Some checkers may handle SVG text differently or skip it.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid, non-dom</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Sibling background - case 1</p>
+      <div class="meta">
+        <span class="badge">c57</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c57" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c57"] .viewport{ background:#ffffff; position:relative; }
+.case[data-case-id="c57"] .bg{
+  position:absolute; inset:0;
+  background:#111827;
+}
+.case[data-case-id="c57"] .targetText{
+  position:relative;
+  color:#f9fafb;
+  font-weight:800;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c57" >
+  <div class="viewport">
+    <div class="bg" aria-hidden="true"></div>
+    <span class="targetText" data-target="text">Sibling</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">A sibling layer behind the text provides the effective background. Some checkers may sample the viewport background instead of the sibling layer.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-layered, layering</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Sibling background - case 2</p>
+      <div class="meta">
+        <span class="badge">c58</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c58" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c58"] .viewport{ background:#111827; position:relative; }
+.case[data-case-id="c58"] .bg{
+  position:absolute; inset:0;
+  background:#ffffff;
+}
+.case[data-case-id="c58"] .targetText{
+  position:relative;
+  color:#111827;
+  font-weight:800;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c58" >
+  <div class="viewport">
+    <div class="bg" aria-hidden="true"></div>
+    <span class="targetText" data-target="text">Sibling</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">A sibling layer behind the text paints a different background than the viewport. Some checkers may sample the viewport background instead of the sibling layer.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-layered, layering</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Pseudo overlay - light</p>
+      <div class="meta">
+        <span class="badge">c59</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c59" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c59"] .viewport{ background:#111827; position:relative; }
+.case[data-case-id="c59"] .viewport::before{
+  content:"";
+  position:absolute; inset:0;
+  background: rgba(255,255,255,0.08);
+}
+.case[data-case-id="c59"] .targetText{
+  position:relative;
+  color:#ffffff;
+  font-weight:800;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c59" >
+  <div class="viewport">
+    <span class="targetText" data-target="text">Overlay</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">A ::before overlay blends over the background under the text. Tools that ignore pseudo-elements may compute the wrong background.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-layered, pseudo</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Pseudo overlay - strong</p>
+      <div class="meta">
+        <span class="badge">c60</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge pass">Expected: PASS</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c60" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c60"] .viewport{ background:#111827; position:relative; }
+.case[data-case-id="c60"] .viewport::before{
+  content:"";
+  position:absolute; inset:0;
+  background: rgba(0,0,0,0.55);
+}
+.case[data-case-id="c60"] .targetText{
+  position:relative;
+  color:#ffffff;
+  font-weight:800;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c60" >
+  <div class="viewport">
+    <span class="targetText" data-target="text">Overlay</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">A stronger ::before overlay changes the background under the text. Contrast must be computed on the blended result.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-layered, pseudo</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">Mix blend mode - gradient</p>
+      <div class="meta">
+        <span class="badge">c61</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c61" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+.case[data-case-id="c61"] .viewport{
+  background-image: linear-gradient(90deg,#ffffff,#111827);
+}
+.case[data-case-id="c61"] .targetText{
+  mix-blend-mode: difference;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 900;
+}
+</style>
+<section class="case sim-cvd" data-case-id="c61" >
+  <div class="viewport">
+    <span class="targetText" data-target="text">Blend</span>
+  </div>
+</section>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">Text uses mix-blend-mode: difference over a gradient. The rendered text color depends on pixels behind it and may not be computed by some tools.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-gradient, blend-mask</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="cardhead">
+    <div>
+      <p class="title">F24 failure background set but text color not set</p>
+      <div class="meta">
+        <span class="badge">c62</span>
+        <span class="badge">1.4.3</span>
+        <span class="badge fail">Expected: FAIL</span>
+        
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="btn" href="case.html?id=c62" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <div class="cardbody">
+    <div class="sim-cvd"><style>
+  .c61{width:100%;height:100%;}
+  .c61 iframe{width:100%;height:100%;border:0;border-radius:12px;display:block;}
+</style>
+<div class="c61">
+  <iframe title="F24: background set, text color unspecified"
+    srcdoc="<!doctype html><meta charset='utf-8'>
+    <style>
+      html,body{margin:0;height:100%;}
+      body{background:#000080;font:16px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;}
+      .pad{padding:22px;}
+      .t{font-weight:800;}
+      .s{margin-top:8px;font-size:13px;opacity:.9;}
+    </style>
+    <body>
+      <div class='pad'>
+        <div class='t'>Unspecified text color</div>
+        <div class='s'></div>
+      </div>
+    </body>">
+  </iframe>
+</div>
+</div>
+    <details class="details"><summary>Notes</summary><p class="note">WCAG Failure F24: background color is set but text color is not explicitly set. Contrast depends on inherited/UA defaults and is not guaranteed.</p></details>
+    <div class="actions">
+      <div class="actionlinks">
+        <span class="badge">tags: bg-solid, inheritance</span>
+        <span class="badge">tool: —</span>
+        <span class="badge">human: —</span>
+      </div>
+      <div class="markgroup"><span class="marklabel">Tool outcome</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+      <div class="markgroup"><span class="marklabel">Human interpretation</span><div class="mark"><button type="button" class="markbtn" data-sel="0">PASS</button><button type="button" class="markbtn" data-sel="0">FAIL</button><button type="button" class="markbtn" data-sel="0">REVIEW</button></div></div>
+    </div>
+  </div>
+</article>
+</div>
+
+  <p class="smallprint">
+    Vision modes help evaluate perceptual robustness. They do not change WCAG thresholds.
+  </p>
+</div>
+
+
+</body>
+</html>

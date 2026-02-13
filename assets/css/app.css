@@ -60,6 +60,12 @@ a:focus-visible{
   flex-wrap:wrap;
   margin-bottom: 14px;
 }
+.top-actions{
+  margin-left:auto;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
 .brand{
   display:flex;
   gap:12px;
