@@ -477,7 +477,7 @@
         "bg-solid"
       ],
       "snippet": "cases/c31_disabled_text_low_contrast.html",
-      "notes": "Disabled setting row shows \"Disabled label\" and \"OFF\" with low contrast on the component background.",
+      "notes": "Disabled setting row shows \"Disabled label\" and \"OFF\" with low contrast on the component background. Exempt only if the component is truly inactive/disabled; if the text is informative, it should be evaluated normally.",
       "tier": "core"
     },
     {
