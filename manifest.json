@@ -856,6 +856,22 @@
     },
     {
       "id": "c56",
+      "title": "SVG text element - case 2",
+      "expected": "fail",
+      "sc": [
+        "1.4.3"
+      ],
+      "threshold": 4.5,
+      "tags": [
+        "bg-solid",
+        "non-dom"
+      ],
+      "snippet": "cases/c56_svg_text_element.html",
+      "notes": "Text is rendered as SVG text rather than HTML text. Some checkers may handle SVG text differently or skip it.",
+      "tier": "challenge"
+    },
+    {
+      "id": "c57",
       "title": "Sibling background - case 1",
       "expected": "pass",
       "sc": [
@@ -866,12 +882,12 @@
         "bg-layered",
         "layering"
       ],
-      "snippet": "cases/c56_sibling_background_case_1.html",
+      "snippet": "cases/c57_sibling_background_case_1.html",
       "notes": "A sibling layer behind the text provides the effective background. Some checkers may sample the viewport background instead of the sibling layer.",
       "tier": "challenge"
     },
     {
-      "id": "c57",
+      "id": "c58",
       "title": "Sibling background - case 2",
       "expected": "pass",
       "sc": [
@@ -882,12 +898,12 @@
         "bg-layered",
         "layering"
       ],
-      "snippet": "cases/c57_sibling_background_case_2.html",
+      "snippet": "cases/c58_sibling_background_case_2.html",
       "notes": "A sibling layer behind the text paints a different background than the viewport. Some checkers may sample the viewport background instead of the sibling layer.",
       "tier": "challenge"
     },
     {
-      "id": "c58",
+      "id": "c59",
       "title": "Pseudo overlay - light",
       "expected": "pass",
       "sc": [
@@ -898,12 +914,12 @@
         "bg-layered",
         "pseudo"
       ],
-      "snippet": "cases/c58_pseudo_overlay_light.html",
+      "snippet": "cases/c59_pseudo_overlay_light.html",
       "notes": "A ::before overlay blends over the background under the text. Tools that ignore pseudo-elements may compute the wrong background.",
       "tier": "challenge"
     },
     {
-      "id": "c59",
+      "id": "c60",
       "title": "Pseudo overlay - strong",
       "expected": "pass",
       "sc": [
@@ -914,12 +930,12 @@
         "bg-layered",
         "pseudo"
       ],
-      "snippet": "cases/c59_pseudo_overlay_strong.html",
+      "snippet": "cases/c60_pseudo_overlay_strong.html",
       "notes": "A stronger ::before overlay changes the background under the text. Contrast must be computed on the blended result.",
       "tier": "challenge"
     },
     {
-      "id": "c60",
+      "id": "c61",
       "title": "Mix blend mode - gradient",
       "expected": "fail",
       "sc": [
@@ -930,12 +946,12 @@
         "bg-gradient",
         "blend-mask"
       ],
-      "snippet": "cases/c60_mix_blend_mode_gradient.html",
+      "snippet": "cases/c61_mix_blend_mode_gradient.html",
       "notes": "Text uses mix-blend-mode: difference over a gradient. The rendered text color depends on pixels behind it and may not be computed by some tools.",
       "tier": "challenge"
     },
     {
-      "id": "c61",
+      "id": "c62",
       "title": "F24 failure background set but text color not set",
       "expected": "fail",
       "sc": [
@@ -946,11 +962,11 @@
         "bg-solid",
         "inheritance"
       ],
-      "snippet": "cases/c61_f24_background_set_text_color_not_set.html",
+      "snippet": "cases/c62_f24_background_set_text_color_not_set.html",
       "notes": "WCAG Failure F24: background color is set but text color is not explicitly set. Contrast depends on inherited/UA defaults and is not guaranteed."
     },
     {
-      "id": "c62",
+      "id": "c63",
       "title": "Image of text banner not DOM text",
       "expected": "pass",
       "sc": [
@@ -961,7 +977,7 @@
         "bg-image",
         "non-dom"
       ],
-      "snippet": "cases/c62_image_of_text_banner.html",
+      "snippet": "cases/c63_image_of_text_banner.html",
       "notes": "Text is part of an image (not real DOM text). DOM/CSS-based tools may miss it.",
       "tier": "challenge"
     }
