@@ -125,6 +125,16 @@ h1{
   padding: 10px 12px;
   border-radius: 12px;
   cursor:pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn.switchbtn{
+  border-style: dashed;
+}
+.btn.switchbtn .ico{
+  font-size: 12px;
+  line-height: 1;
 }
 .cardhead .btn{
   font-size: 12px;
