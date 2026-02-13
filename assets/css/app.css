@@ -131,6 +131,7 @@ h1{
 }
 .btn.switchbtn{
   border-style: dashed;
+  white-space: nowrap;
 }
 .btn.switchbtn .ico{
   font-size: 12px;
