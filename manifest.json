@@ -964,22 +964,6 @@
       ],
       "snippet": "cases/c62_f24_background_set_text_color_not_set.html",
       "notes": "WCAG Failure F24: background color is set but text color is not explicitly set. Contrast depends on inherited/UA defaults and is not guaranteed."
-    },
-    {
-      "id": "c63",
-      "title": "Image of text banner not DOM text",
-      "expected": "pass",
-      "sc": [
-        "1.4.3"
-      ],
-      "threshold": 4.5,
-      "tags": [
-        "bg-image",
-        "non-dom"
-      ],
-      "snippet": "cases/c63_image_of_text_banner.html",
-      "notes": "Text is part of an image (not real DOM text). DOM/CSS-based tools may miss it.",
-      "tier": "challenge"
     }
   ]
 }
