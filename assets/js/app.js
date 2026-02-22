@@ -315,7 +315,7 @@ function exportCSV() {
     const vision = simVal !== "none" ? simVal : "normal";
     rows.push([toolValue, state.visualUser || "", vision, c.id, c.expected, v, m, sc, tier, c.threshold ?? "", tags, now].map(x => `"${String(x).replaceAll('"','""')}"`).join(","));
   }
-  download(`contrastlab_${toolFile}_${now.replaceAll(":","-")}.csv`, rows.join("\n"));
+  download(`contrast_lab_${now.replaceAll(":","-")}.csv`, rows.join("\n"));
 }
 
 function resetMarks() {

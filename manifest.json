@@ -15,7 +15,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c01_uniform_background.html",
       "notes": "Text \"Baseline\" on white background.",
@@ -30,7 +30,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c02_uniform_background_light_gray_text.html",
       "notes": "Text \"Low contrast\" on white background.",
@@ -45,7 +45,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c03_uniform_dark_background_viewport.html",
       "notes": "Text \"Baseline\" on dark background; the background is set on the viewport element.",
@@ -60,7 +60,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c04_uniform_dark_background.html",
       "notes": "Text \"Baseline\" on dark background.",
@@ -75,11 +75,11 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid",
-        "alpha"
+        "background-solid",
+        "alpha-overlay"
       ],
-      "snippet": "cases/c05_alpha_text_50.html",
-      "notes": "Text \"Alpha 50%\" uses opacity on dark background. The rendered text color depends on alpha blending.",
+      "snippet": "cases/c05_alpha-overlay_text_50.html",
+      "notes": "Text \"Alpha 50%\" uses opacity on dark background. The rendered text color depends on alpha-overlay blending.",
       "tier": "core"
     },
     {
@@ -91,11 +91,11 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid",
-        "alpha"
+        "background-solid",
+        "alpha-overlay"
       ],
-      "snippet": "cases/c06_alpha_text_25.html",
-      "notes": "Text \"Alpha 25%\" uses opacity on dark background. The rendered text color depends on alpha blending.",
+      "snippet": "cases/c06_alpha-overlay_text_25.html",
+      "notes": "Text \"Alpha 25%\" uses opacity on dark background. The rendered text color depends on alpha-overlay blending.",
       "tier": "core"
     },
     {
@@ -107,7 +107,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c07_near_threshold_4_5.html",
       "notes": "Text on white background with contrast just above AA (4.51:1, rounded). Near the threshold, results may differ slightly due to rounding/precision choices.",
@@ -122,7 +122,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c08_below_threshold_4_5.html",
       "notes": "Text on white background with contrast just below AA (4.49:1, rounded). Near the threshold, results may differ slightly due to rounding/precision choices.",
@@ -137,7 +137,7 @@
       ],
       "threshold": 3.0,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c09_large_text_near_3_1.html",
       "notes": "Large text on white background with contrast just above 3:1 (3.01:1, rounded). Near the threshold, results may differ slightly due to rounding/precision choices.",
@@ -152,7 +152,7 @@
       ],
       "threshold": 3.0,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c10_large_text_below_3_1.html",
       "notes": "Large text on white background with contrast just below 3:1 (2.99:1, rounded). Near the threshold, results may differ slightly due to rounding/precision choices.",
@@ -167,7 +167,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c11_normal_text.html",
       "notes": "Text \"Normal text\" on white background.",
@@ -182,7 +182,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c12_normal_text_low_contrast.html",
       "notes": "Text \"Normal text\" on white background with low contrast.",
@@ -197,7 +197,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c13_declared_background_white.html",
       "notes": "Text \"Declared\" on declared white background.",
@@ -212,8 +212,8 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-image",
-        "alpha"
+        "background-image",
+        "alpha-overlay"
       ],
       "snippet": "cases/c14_declared_background_white_covered_image.html",
       "notes": "Text \"Covered\" over a background image; the viewport also declares white underneath. Some checkers may use the declared background instead of the image.",
@@ -228,8 +228,8 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-image",
-        "alpha"
+        "background-image",
+        "alpha-overlay"
       ],
       "snippet": "cases/c15_declared_background_black_covered_image.html",
       "notes": "Text \"Covered\" over a background image; the viewport also declares black underneath. Some checkers may use the declared background instead of the image.",
@@ -244,8 +244,8 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-gradient",
-        "alpha"
+        "background-gradient",
+        "alpha-overlay"
       ],
       "snippet": "cases/c16_declared_background_gradient_overlay.html",
       "notes": "Text \"Covered\" over a background image with a translucent gradient overlay; black is declared underneath. Correct evaluation requires compositing multiple layers.",
@@ -260,8 +260,8 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-image",
-        "alpha"
+        "background-image",
+        "alpha-overlay"
       ],
       "snippet": "cases/c17_declared_background_black_covered_image_lightblue_text.html",
       "notes": "Light-blue text \"Covered\" over a background image; black is declared underneath. Some checkers may use the declared background instead of the image.",
@@ -276,8 +276,8 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-image",
-        "alpha"
+        "background-image",
+        "alpha-overlay"
       ],
       "snippet": "cases/c18_declared_background_white_covered_image_lightblue_text.html",
       "notes": "Light-blue text \"Covered\" over a background image; white is declared underneath. Some checkers may use the declared background instead of the image.",
@@ -292,7 +292,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c19_tiny_text.html",
       "notes": "Button label \"Tiny text\" (11px) on a white button over white background.",
@@ -307,7 +307,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c20_thin_weight_text.html",
       "notes": "Button label \"Thin weight\" on a white button over white background.",
@@ -322,8 +322,8 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid",
-        "alpha"
+        "background-solid",
+        "alpha-overlay"
       ],
       "snippet": "cases/c21_parent_opacity.html",
       "notes": "Text \"Opacity\" inside a parent element with reduced opacity on white background. Parent opacity changes the rendered foreground color.",
@@ -338,11 +338,11 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid",
-        "alpha"
+        "background-solid",
+        "alpha-overlay"
       ],
       "snippet": "cases/c22_rgba_text_40.html",
-      "notes": "Text \"RGBA\" uses transparency on white background. The rendered text color depends on alpha blending.",
+      "notes": "Text \"RGBA\" uses transparency on white background. The rendered text color depends on alpha-overlay blending.",
       "tier": "core"
     },
     {
@@ -354,7 +354,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c23_text_shadow.html",
       "notes": "Text \"Shadow\" on white background with a text shadow. Some checkers ignore shadows and evaluate only the text color.",
@@ -369,7 +369,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c24_text_shadow_strong.html",
       "notes": "Text \"Shadow\" on white background with a strong blurred shadow. Some checkers ignore shadows and evaluate only the text color.",
@@ -384,7 +384,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c25_placeholder_low_contrast.html",
       "notes": "Placeholder \"Type here...\" in a text input on white background with low contrast.",
@@ -399,7 +399,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c26_placeholder_high_contrast.html",
       "notes": "Placeholder \"Type here...\" in a text input on white background.",
@@ -414,7 +414,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c27_floating_label.html",
       "notes": "Floating label \"Email\" above a text input on white background.",
@@ -429,7 +429,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c28_floating_label_value_low_contrast.html",
       "notes": "Floating label is readable, but the input value has low contrast on the input background. Tools may report one and miss the other.",
@@ -444,7 +444,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c29_floating_label_label_low_contrast.html",
       "notes": "Floating label has low contrast on white background, while the input value is readable. Tools may report one and miss the other.",
@@ -459,7 +459,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c30_floating_label_highlight_low_contrast.html",
       "notes": "Floating label (\"Email\") is shown with sufficient contrast, but the input value (\"name@example.com\") is rendered as dark text on a dark blue highlight, resulting in low contrast.",
@@ -474,7 +474,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c31_disabled_text_low_contrast.html",
       "notes": "Disabled setting row shows \"Disabled label\" and \"OFF\" with low contrast on the component background. Exempt only if the component is truly inactive/disabled; if the text is informative, it should be evaluated normally.",
@@ -489,7 +489,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c32_helper_text_low_contrast.html",
       "notes": "Label \"Email\" plus helper text \"We\u2019ll never share it.\" The helper line has low contrast. Tools may report one and miss the other.",
@@ -504,7 +504,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c33_link_high_contrast.html",
       "notes": "Link text \"Link\" on white background.",
@@ -519,7 +519,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c34_link_low_contrast.html",
       "notes": "Link text \"Link\" on white background with low contrast.",
@@ -535,7 +535,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c35_button_high_contrast.html",
       "notes": "Button label \"Button\" on a blue button over white background.",
@@ -551,7 +551,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c36_button_low_contrast.html",
       "notes": "Button label \"Button\" on a blue button with low contrast.",
@@ -567,7 +567,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c37_badge_low_contrast.html",
       "notes": "Badge label \"Badge\" on yellow background with low contrast.",
@@ -583,7 +583,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid"
+        "background-solid"
       ],
       "snippet": "cases/c38_badge_high_contrast.html",
       "notes": "Badge label \"Badge\" on yellow background.",
@@ -598,7 +598,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-gradient"
+        "background-gradient"
       ],
       "snippet": "cases/c39_gradient_low_contrast.html",
       "notes": "Light gray text (\"Gradient\") is shown directly on a non-uniform background with a left-to-right light gradient (no images, no transparency).",
@@ -613,7 +613,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-gradient",
+        "background-gradient",
         "blend-mask"
       ],
       "snippet": "cases/c40_gradient_text_background_clip.html",
@@ -629,7 +629,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-gradient"
+        "background-gradient"
       ],
       "snippet": "cases/c41_radial_gradient_low_contrast.html",
       "notes": "Text \"Radial\" on a radial gradient background. Contrast varies across the text area.",
@@ -644,7 +644,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-gradient"
+        "background-gradient"
       ],
       "snippet": "cases/c42_multi_stop_gradient_low_contrast.html",
       "notes": "Text \"Multi-stop\" on a multi-stop gradient background. Contrast varies across the text area.",
@@ -659,7 +659,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-gradient"
+        "background-gradient"
       ],
       "snippet": "cases/c43_repeating_pattern_low_contrast.html",
       "notes": "Text \"Repeating\" on a repeating pattern background. Sampling a single point can be misleading.",
@@ -674,7 +674,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-pattern"
+        "background-pattern"
       ],
       "snippet": "cases/c44_checker_pattern_low_contrast.html",
       "notes": "Text \"Checker\" on a checkerboard pattern background. Sampling a single point can be misleading.",
@@ -689,7 +689,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-gradient"
+        "background-gradient"
       ],
       "snippet": "cases/c45_pill_on_gradient_background.html",
       "notes": "Text \"Pill\" inside a pill element on top of a gradient background. Tools may sample the wrong layer.",
@@ -704,11 +704,11 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-layered",
-        "pseudo"
+        "background-layered",
+        "pseudo-element"
       ],
-      "snippet": "cases/c46_pseudo_before_background.html",
-      "notes": "Text \"::before\" over a background drawn by a ::before pseudo-element. Tools that ignore pseudo-elements may compute the wrong background.",
+      "snippet": "cases/c46_pseudo-element_before_background.html",
+      "notes": "Text \"::before\" over a background drawn by a ::before pseudo-element-element. Tools that ignore pseudo-element-elements may compute the wrong background.",
       "tier": "challenge"
     },
     {
@@ -720,11 +720,11 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-layered",
-        "alpha"
+        "background-layered",
+        "alpha-overlay"
       ],
       "snippet": "cases/c47_overlay_panel_low_contrast.html",
-      "notes": "Dark text \"Overlay\" on a light translucent panel over a darker background. Correct evaluation requires alpha compositing.",
+      "notes": "Dark text \"Overlay\" on a light translucent panel over a darker background. Correct evaluation requires alpha-overlay compositing.",
       "tier": "challenge"
     },
     {
@@ -736,11 +736,11 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-layered",
-        "alpha"
+        "background-layered",
+        "alpha-overlay"
       ],
       "snippet": "cases/c48_overlay_panel_high_contrast.html",
-      "notes": "White text \"Overlay\" on a light translucent panel over a darker background. Correct evaluation requires alpha compositing.",
+      "notes": "White text \"Overlay\" on a light translucent panel over a darker background. Correct evaluation requires alpha-overlay compositing.",
       "tier": "challenge"
     },
     {
@@ -752,27 +752,27 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid",
-        "filter"
+        "background-solid",
+        "css-filter"
       ],
-      "snippet": "cases/c49_filter_brightness_trap.html",
-      "notes": "Text is shown on a panel whose background is altered by a CSS brightness filter, while the text color stays the same. Some checkers may ignore CSS filters and compute contrast from the original colors.",
+      "snippet": "cases/c49_css-filter_brightness_trap.html",
+      "notes": "Text is shown on a panel whose background is altered by a CSS brightness css-filter, while the text color stays the same. Some checkers may ignore CSS css-filters and compute contrast from the original colors.",
       "tier": "challenge"
     },
     {
       "id": "c50",
-      "title": "Backdrop-filter - blur and brightness",
+      "title": "Backdrop-css-filter - blur and brightness",
       "expected": "fail",
       "sc": [
         "1.4.3"
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-layered",
-        "filter"
+        "background-layered",
+        "css-filter"
       ],
-      "snippet": "cases/c50_backdrop_filter_blur_brightness.html",
-      "notes": "Text is shown on a translucent panel with backdrop-filter over a dark gradient. Some checkers may not compute the filtered/composited background correctly.",
+      "snippet": "cases/c50_backdrop_css-filter_blur_brightness.html",
+      "notes": "Text is shown on a translucent panel with backdrop-css-filter over a dark gradient. Some checkers may not compute the css-filtered/composited background correctly.",
       "tier": "challenge"
     },
     {
@@ -784,7 +784,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-image",
+        "background-image",
         "blend-mask"
       ],
       "snippet": "cases/c51_mask_text.html",
@@ -800,11 +800,11 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid",
-        "computed"
+        "background-solid",
+        "computed-color"
       ],
       "snippet": "cases/c52_color_mix_low_contrast.html",
-      "notes": "Text color is computed with color-mix using transparency on white background. Some checkers may not support color-mix and may compute a different final color.",
+      "notes": "Text color is computed-color with color-mix using transparency on white background. Some checkers may not support color-mix and may compute a different final color.",
       "tier": "challenge"
     },
     {
@@ -816,7 +816,7 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-image"
+        "background-image"
       ],
       "snippet": "cases/c53_nested_element_background.html",
       "notes": "The viewport background is white, but the text sits inside a nested element with its own dark gradient background. Some checkers may sample the viewport background instead of the nested background.",
@@ -831,8 +831,8 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-gradient",
-        "time"
+        "background-gradient",
+        "time-dependent"
       ],
       "snippet": "cases/c54_animated_gradient_background.html",
       "notes": "Text is shown on an animated gradient background. Some checkers may sample a single animation frame and report different results.",
@@ -847,8 +847,8 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid",
-        "non-dom"
+        "background-solid",
+        "non-dom-text"
       ],
       "snippet": "cases/c55_svg_text_element.html",
       "notes": "Text is rendered as SVG text rather than HTML text. Some checkers may handle SVG text differently or skip it.",
@@ -863,8 +863,8 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid",
-        "non-dom"
+        "background-solid",
+        "non-dom-text"
       ],
       "snippet": "cases/c56_svg_text_element.html",
       "notes": "Text is rendered as SVG text rather than HTML text. Some checkers may handle SVG text differently or skip it.",
@@ -879,8 +879,8 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-layered",
-        "layering"
+        "background-layered",
+        "element-layering"
       ],
       "snippet": "cases/c57_sibling_background_case_1.html",
       "notes": "A sibling layer behind the text provides the effective background. Some checkers may sample the viewport background instead of the sibling layer.",
@@ -895,8 +895,8 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-layered",
-        "layering"
+        "background-layered",
+        "element-layering"
       ],
       "snippet": "cases/c58_sibling_background_case_2.html",
       "notes": "A sibling layer behind the text paints a different background than the viewport. Some checkers may sample the viewport background instead of the sibling layer.",
@@ -911,11 +911,11 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-layered",
-        "pseudo"
+        "background-layered",
+        "pseudo-element"
       ],
-      "snippet": "cases/c59_pseudo_overlay_light.html",
-      "notes": "A ::before overlay blends over the background under the text. Tools that ignore pseudo-elements may compute the wrong background.",
+      "snippet": "cases/c59_pseudo-element_overlay_light.html",
+      "notes": "A ::before overlay blends over the background under the text. Tools that ignore pseudo-element-elements may compute the wrong background.",
       "tier": "challenge"
     },
     {
@@ -927,11 +927,11 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-layered",
-        "pseudo"
+        "background-layered",
+        "pseudo-element"
       ],
-      "snippet": "cases/c60_pseudo_overlay_strong.html",
-      "notes": "A stronger ::before overlay changes the background under the text. Contrast must be computed on the blended result.",
+      "snippet": "cases/c60_pseudo-element_overlay_strong.html",
+      "notes": "A stronger ::before overlay changes the background under the text. Contrast must be computed-color on the blended result.",
       "tier": "challenge"
     },
     {
@@ -943,11 +943,11 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-gradient",
+        "background-gradient",
         "blend-mask"
       ],
       "snippet": "cases/c61_mix_blend_mode_gradient.html",
-      "notes": "Text uses mix-blend-mode: difference over a gradient. The rendered text color depends on pixels behind it and may not be computed by some tools.",
+      "notes": "Text uses mix-blend-mode: difference over a gradient. The rendered text color depends on pixels behind it and may not be computed-color by some tools.",
       "tier": "challenge"
     },
     {
@@ -959,8 +959,8 @@
       ],
       "threshold": 4.5,
       "tags": [
-        "bg-solid",
-        "inheritance"
+        "background-solid",
+        "inherited-color"
       ],
       "snippet": "cases/c62_f24_background_set_text_color_not_set.html",
       "notes": "WCAG Failure F24: background color is set but text color is not explicitly set. Contrast depends on inherited/UA defaults and is not guaranteed."

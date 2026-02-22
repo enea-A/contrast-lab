@@ -11,33 +11,35 @@
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <filter id="cvd-none"><feColorMatrix type="matrix"
+  <css-filter id="cvd-none"><feColorMatrix type="matrix"
     values="1 0 0 0 0
             0 1 0 0 0
             0 0 1 0 0
-            0 0 0 1 0"/></filter>
+            0 0 0 1 0"/></css-filter>
 
-  <filter id="cvd-protanopia"><feColorMatrix type="matrix"
+  <css-filter id="cvd-protanopia"><feColorMatrix type="matrix"
     values="0.56667 0.43333 0 0 0
             0.55833 0.44167 0 0 0
             0 0.24167 0.75833 0 0
-            0 0 0 1 0"/></filter>
-  <filter id="cvd-deuteranopia"><feColorMatrix type="matrix"
+            0 0 0 1 0"/></css-filter>
+  <css-filter id="cvd-deuteranopia"><feColorMatrix type="matrix"
     values="0.625 0.375 0 0 0
             0.70 0.30 0 0 0
             0 0.30 0.70 0 0
-            0 0 0 1 0"/></filter>
-  <filter id="cvd-tritanopia"><feColorMatrix type="matrix"
+            0 0 0 1 0"/></css-filter>
+  <css-filter id="cvd-tritanopia"><feColorMatrix type="matrix"
     values="0.95 0.05 0 0 0
             0 0.43333 0.56667 0 0
             0 0.475 0.525 0 0
-            0 0 0 1 0"/></filter>
+            0 0 0 1 0"/></css-filter>
 </svg>
 
 <div class="container sim-root" id="simRoot" data-sim="none">
   <div class="topbar">
     <div class="brand">
-      <div class="logo" aria-hidden="true"></div>
+      <div class="logo" aria-hidden="true">
+        <img src="assets/logo.png" alt="" />
+      </div>
       <div>
         <h1>Contrast Lab</h1>
         <div class="sub">
@@ -60,10 +62,10 @@
       <input class="input" id="user" placeholder="Name / initials" size="16" />
 
       <label for="tagFilter">Tag</label>
-      <select id="tagFilter" aria-label="Tag filter"></select>
+      <select id="tagFilter" aria-label="Tag css-filter"></select>
 
       <label for="tierFilter">Set</label>
-      <select id="tierFilter" aria-label="Tier filter">
+      <select id="tierFilter" aria-label="Tier css-filter">
         <option value="">All sets</option>
         <option value="core">Core set</option>
         <option value="challenge">Challenge set</option>
@@ -124,7 +126,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Baseline&quot; on white background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -160,7 +162,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Low contrast&quot; on white background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -196,7 +198,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Baseline&quot; on dark background; the background is set on the viewport element.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -232,7 +234,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Baseline&quot; on dark background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -265,10 +267,10 @@
   </div>
 </section>
 </div>
-    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Alpha 50%&quot; uses opacity on dark background. The rendered text color depends on alpha blending.</p></details>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Alpha 50%&quot; uses opacity on dark background. The rendered text color depends on alpha-overlay blending.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid, alpha</span>
+        <span class="badge">tags: background-solid, alpha-overlay</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -301,10 +303,10 @@
   </div>
 </section>
 </div>
-    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Alpha 25%&quot; uses opacity on dark background. The rendered text color depends on alpha blending.</p></details>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;Alpha 25%&quot; uses opacity on dark background. The rendered text color depends on alpha-overlay blending.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid, alpha</span>
+        <span class="badge">tags: background-solid, alpha-overlay</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -340,7 +342,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text on white background with contrast just above AA (4.51:1, rounded). Near the threshold, results may differ slightly due to rounding/precision choices.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -376,7 +378,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text on white background with contrast just below AA (4.49:1, rounded). Near the threshold, results may differ slightly due to rounding/precision choices.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -412,7 +414,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Large text on white background with contrast just above 3:1 (3.01:1, rounded). Near the threshold, results may differ slightly due to rounding/precision choices.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -448,7 +450,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Large text on white background with contrast just below 3:1 (2.99:1, rounded). Near the threshold, results may differ slightly due to rounding/precision choices.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -487,7 +489,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Normal text&quot; on white background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -526,7 +528,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Normal text&quot; on white background with low contrast.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -565,7 +567,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Declared&quot; on declared white background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -606,7 +608,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Covered&quot; over a background image; the viewport also declares white underneath. Some checkers may use the declared background instead of the image.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-image, alpha</span>
+        <span class="badge">tags: background-image, alpha-overlay</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -647,7 +649,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Covered&quot; over a background image; the viewport also declares black underneath. Some checkers may use the declared background instead of the image.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-image, alpha</span>
+        <span class="badge">tags: background-image, alpha-overlay</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -688,7 +690,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Covered&quot; over a background image with a translucent gradient overlay; black is declared underneath. Correct evaluation requires compositing multiple layers.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-gradient, alpha</span>
+        <span class="badge">tags: background-gradient, alpha-overlay</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -729,7 +731,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Light-blue text &quot;Covered&quot; over a background image; black is declared underneath. Some checkers may use the declared background instead of the image.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-image, alpha</span>
+        <span class="badge">tags: background-image, alpha-overlay</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -770,7 +772,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Light-blue text &quot;Covered&quot; over a background image; white is declared underneath. Some checkers may use the declared background instead of the image.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-image, alpha</span>
+        <span class="badge">tags: background-image, alpha-overlay</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -819,7 +821,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Button label &quot;Tiny text&quot; (11px) on a white button over white background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -868,7 +870,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Button label &quot;Thin weight&quot; on a white button over white background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -910,7 +912,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Opacity&quot; inside a parent element with reduced opacity on white background. Parent opacity changes the rendered foreground color.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid, alpha</span>
+        <span class="badge">tags: background-solid, alpha-overlay</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -947,10 +949,10 @@
   </div>
 </section>
 </div>
-    <details class="details"><summary>Notes</summary><p class="note">Text &quot;RGBA&quot; uses transparency on white background. The rendered text color depends on alpha blending.</p></details>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;RGBA&quot; uses transparency on white background. The rendered text color depends on alpha-overlay blending.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid, alpha</span>
+        <span class="badge">tags: background-solid, alpha-overlay</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -986,7 +988,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Shadow&quot; on white background with a text shadow. Some checkers ignore shadows and evaluate only the text color.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1026,7 +1028,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Shadow&quot; on white background with a strong blurred shadow. Some checkers ignore shadows and evaluate only the text color.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1076,7 +1078,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Placeholder &quot;Type here...&quot; in a text input on white background with low contrast.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1126,7 +1128,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Placeholder &quot;Type here...&quot; in a text input on white background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1171,7 +1173,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Floating label &quot;Email&quot; above a text input on white background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1216,7 +1218,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Floating label is readable, but the input value has low contrast on the input background. Tools may report one and miss the other.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1261,7 +1263,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Floating label has low contrast on white background, while the input value is readable. Tools may report one and miss the other.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1306,7 +1308,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Floating label (&quot;Email&quot;) is shown with sufficient contrast, but the input value (&quot;name@example.com&quot;) is rendered as dark text on a dark blue highlight, resulting in low contrast.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1363,7 +1365,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Disabled setting row shows &quot;Disabled label&quot; and &quot;OFF&quot; with low contrast on the component background. Exempt only if the component is truly inactive/disabled; if the text is informative, it should be evaluated normally.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1424,7 +1426,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Label &quot;Email&quot; plus helper text &quot;We’ll never share it.&quot; The helper line has low contrast. Tools may report one and miss the other.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1469,7 +1471,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Link text &quot;Link&quot; on white background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1514,7 +1516,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Link text &quot;Link&quot; on white background with low contrast.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1563,7 +1565,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Button label &quot;Button&quot; on a blue button over white background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1612,7 +1614,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Button label &quot;Button&quot; on a blue button with low contrast.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1661,7 +1663,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Badge label &quot;Badge&quot; on yellow background with low contrast.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1710,7 +1712,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Badge label &quot;Badge&quot; on yellow background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid</span>
+        <span class="badge">tags: background-solid</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1750,7 +1752,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Light gray text (&quot;Gradient&quot;) is shown directly on a non-uniform background with a left-to-right light gradient (no images, no transparency).</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-gradient</span>
+        <span class="badge">tags: background-gradient</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1798,7 +1800,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Gradient&quot; rendered via background-clip:text with color: transparent on white background, so the text fill comes from a linear gradient. Some checkers may not compute the rendered fill correctly.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-gradient, blend-mask</span>
+        <span class="badge">tags: background-gradient, blend-mask</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1838,7 +1840,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Radial&quot; on a radial gradient background. Contrast varies across the text area.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-gradient</span>
+        <span class="badge">tags: background-gradient</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1878,7 +1880,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Multi-stop&quot; on a multi-stop gradient background. Contrast varies across the text area.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-gradient</span>
+        <span class="badge">tags: background-gradient</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1918,7 +1920,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Repeating&quot; on a repeating pattern background. Sampling a single point can be misleading.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-gradient</span>
+        <span class="badge">tags: background-gradient</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -1958,7 +1960,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Checker&quot; on a checkerboard pattern background. Sampling a single point can be misleading.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-pattern</span>
+        <span class="badge">tags: background-pattern</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2007,7 +2009,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text &quot;Pill&quot; inside a pill element on top of a gradient background. Tools may sample the wrong layer.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-gradient</span>
+        <span class="badge">tags: background-gradient</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2050,10 +2052,10 @@
   </div>
 </section>
 </div>
-    <details class="details"><summary>Notes</summary><p class="note">Text &quot;::before&quot; over a background drawn by a ::before pseudo-element. Tools that ignore pseudo-elements may compute the wrong background.</p></details>
+    <details class="details"><summary>Notes</summary><p class="note">Text &quot;::before&quot; over a background drawn by a ::before pseudo-element-element. Tools that ignore pseudo-element-elements may compute the wrong background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-layered, pseudo</span>
+        <span class="badge">tags: background-layered, pseudo-element</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2102,10 +2104,10 @@
   </div>
 </section>
 </div>
-    <details class="details"><summary>Notes</summary><p class="note">Dark text &quot;Overlay&quot; on a light translucent panel over a darker background. Correct evaluation requires alpha compositing.</p></details>
+    <details class="details"><summary>Notes</summary><p class="note">Dark text &quot;Overlay&quot; on a light translucent panel over a darker background. Correct evaluation requires alpha-overlay compositing.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-layered, alpha</span>
+        <span class="badge">tags: background-layered, alpha-overlay</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2154,10 +2156,10 @@
   </div>
 </section>
 </div>
-    <details class="details"><summary>Notes</summary><p class="note">White text &quot;Overlay&quot; on a light translucent panel over a darker background. Correct evaluation requires alpha compositing.</p></details>
+    <details class="details"><summary>Notes</summary><p class="note">White text &quot;Overlay&quot; on a light translucent panel over a darker background. Correct evaluation requires alpha-overlay compositing.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-layered, alpha</span>
+        <span class="badge">tags: background-layered, alpha-overlay</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2190,7 +2192,7 @@
   width: 100%; height: 100%;
   display:flex; align-items:center; justify-content:center;
   background:#111827;
-  filter: brightness(1.6);
+  css-filter: brightness(1.6);
 }
 .case[data-case-id="c49"] .targetText{
   color:#1e3a8a;
@@ -2203,10 +2205,10 @@
   </div>
 </section>
 </div>
-    <details class="details"><summary>Notes</summary><p class="note">Text is shown on a panel whose background is altered by a CSS brightness filter, while the text color stays the same. Some checkers may ignore CSS filters and compute contrast from the original colors.</p></details>
+    <details class="details"><summary>Notes</summary><p class="note">Text is shown on a panel whose background is altered by a CSS brightness css-filter, while the text color stays the same. Some checkers may ignore CSS css-filters and compute contrast from the original colors.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid, filter</span>
+        <span class="badge">tags: background-solid, css-filter</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2220,7 +2222,7 @@
 <article class="card">
   <div class="cardhead">
     <div>
-      <p class="title">Backdrop-filter - blur and brightness</p>
+      <p class="title">Backdrop-css-filter - blur and brightness</p>
       <div class="meta">
         <span class="badge">c50</span>
         <span class="badge">1.4.3</span>
@@ -2242,7 +2244,7 @@
   position:absolute; inset:18px;
   border-radius: 14px;
   background: rgba(255,255,255,0.18);
-  backdrop-filter: blur(8px) brightness(1.2);
+  backdrop-css-filter: blur(8px) brightness(1.2);
 }
 .case[data-case-id="c50"] .targetText{
   position:relative;
@@ -2257,10 +2259,10 @@
   </div>
 </section>
 </div>
-    <details class="details"><summary>Notes</summary><p class="note">Text is shown on a translucent panel with backdrop-filter over a dark gradient. Some checkers may not compute the filtered/composited background correctly.</p></details>
+    <details class="details"><summary>Notes</summary><p class="note">Text is shown on a translucent panel with backdrop-css-filter over a dark gradient. Some checkers may not compute the css-filtered/composited background correctly.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-layered, filter</span>
+        <span class="badge">tags: background-layered, css-filter</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2306,7 +2308,7 @@
     <details class="details"><summary>Notes</summary><p class="note">A CSS mask fades parts of the glyphs to transparent. Reported results depend on mask support and sampling.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-image, blend-mask</span>
+        <span class="badge">tags: background-image, blend-mask</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2346,10 +2348,10 @@
   </div>
 </section>
 </div>
-    <details class="details"><summary>Notes</summary><p class="note">Text color is computed with color-mix using transparency on white background. Some checkers may not support color-mix and may compute a different final color.</p></details>
+    <details class="details"><summary>Notes</summary><p class="note">Text color is computed-color with color-mix using transparency on white background. Some checkers may not support color-mix and may compute a different final color.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid, computed</span>
+        <span class="badge">tags: background-solid, computed-color</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2405,7 +2407,7 @@
     <details class="details"><summary>Notes</summary><p class="note">The viewport background is white, but the text sits inside a nested element with its own dark gradient background. Some checkers may sample the viewport background instead of the nested background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-image</span>
+        <span class="badge">tags: background-image</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2453,7 +2455,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text is shown on an animated gradient background. Some checkers may sample a single animation frame and report different results.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-gradient, time</span>
+        <span class="badge">tags: background-gradient, time-dependent</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2501,7 +2503,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text is rendered as SVG text rather than HTML text. Some checkers may handle SVG text differently or skip it.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid, non-dom</span>
+        <span class="badge">tags: background-solid, non-dom-text</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2549,7 +2551,7 @@
     <details class="details"><summary>Notes</summary><p class="note">Text is rendered as SVG text rather than HTML text. Some checkers may handle SVG text differently or skip it.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid, non-dom</span>
+        <span class="badge">tags: background-solid, non-dom-text</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2598,7 +2600,7 @@
     <details class="details"><summary>Notes</summary><p class="note">A sibling layer behind the text provides the effective background. Some checkers may sample the viewport background instead of the sibling layer.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-layered, layering</span>
+        <span class="badge">tags: background-layered, element-layering</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2647,7 +2649,7 @@
     <details class="details"><summary>Notes</summary><p class="note">A sibling layer behind the text paints a different background than the viewport. Some checkers may sample the viewport background instead of the sibling layer.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-layered, layering</span>
+        <span class="badge">tags: background-layered, element-layering</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2693,10 +2695,10 @@
   </div>
 </section>
 </div>
-    <details class="details"><summary>Notes</summary><p class="note">A ::before overlay blends over the background under the text. Tools that ignore pseudo-elements may compute the wrong background.</p></details>
+    <details class="details"><summary>Notes</summary><p class="note">A ::before overlay blends over the background under the text. Tools that ignore pseudo-element-elements may compute the wrong background.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-layered, pseudo</span>
+        <span class="badge">tags: background-layered, pseudo-element</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2742,10 +2744,10 @@
   </div>
 </section>
 </div>
-    <details class="details"><summary>Notes</summary><p class="note">A stronger ::before overlay changes the background under the text. Contrast must be computed on the blended result.</p></details>
+    <details class="details"><summary>Notes</summary><p class="note">A stronger ::before overlay changes the background under the text. Contrast must be computed-color on the blended result.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-layered, pseudo</span>
+        <span class="badge">tags: background-layered, pseudo-element</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2789,10 +2791,10 @@
   </div>
 </section>
 </div>
-    <details class="details"><summary>Notes</summary><p class="note">Text uses mix-blend-mode: difference over a gradient. The rendered text color depends on pixels behind it and may not be computed by some tools.</p></details>
+    <details class="details"><summary>Notes</summary><p class="note">Text uses mix-blend-mode: difference over a gradient. The rendered text color depends on pixels behind it and may not be computed-color by some tools.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-gradient, blend-mask</span>
+        <span class="badge">tags: background-gradient, blend-mask</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
@@ -2845,7 +2847,7 @@
     <details class="details"><summary>Notes</summary><p class="note">WCAG Failure F24: background color is set but text color is not explicitly set. Contrast depends on inherited/UA defaults and is not guaranteed.</p></details>
     <div class="actions">
       <div class="actionlinks">
-        <span class="badge">tags: bg-solid, inheritance</span>
+        <span class="badge">tags: background-solid, inherited-color</span>
         <span class="badge">tool: —</span>
         <span class="badge">human: —</span>
       </div>
