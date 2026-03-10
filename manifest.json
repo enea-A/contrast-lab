@@ -761,7 +761,7 @@
     },
     {
       "id": "c50",
-      "title": "Backdrop-css-filter - blur and brightness",
+      "title": "Backdrop-filter - blur and brightness",
       "expected": "fail",
       "sc": [
         "1.4.3"
@@ -952,7 +952,7 @@
     },
     {
       "id": "c62",
-      "title": "F24 failure background set but text color not set",
+      "title": "F24 failure: background set but text colour not set",
       "expected": "fail",
       "sc": [
         "1.4.3"
