@@ -962,6 +962,7 @@
         "background-solid",
         "inherited-color"
       ],
+      "tier": "core",
       "snippet": "cases/c62_f24_background_set_text_color_not_set.html",
       "notes": "WCAG Failure F24: background color is set but text color is not explicitly set. Contrast depends on inherited/UA defaults and is not guaranteed."
     }

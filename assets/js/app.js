@@ -121,7 +121,8 @@ function matchesFilters(c) {
     if (!(c.tags||[]).includes(state.filterTag)) return false;
   }
   if (state.filterTier) {
-    if ((c.tier || "core") !== state.filterTier) return false;
+    const caseTier = c.tier ?? "core";
+    if (caseTier !== state.filterTier) return false;
   }
   return true;
 }
