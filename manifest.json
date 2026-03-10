@@ -840,7 +840,7 @@
     },
     {
       "id": "c55",
-      "title": "SVG text element",
+      "title": "SVG text element - case 1",
       "expected": "pass",
       "sc": [
         "1.4.3"
